@@ -1,0 +1,98 @@
+# depslib dependency file v1.0
+1233024551 source:c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\glee\glee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"GLee.h"
+	<Carbon/Carbon.h>
+
+1233024553 c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\glee\glee.h
+	<windows.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	<stddef.h>
+
+1409894500 source:c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\globject.cpp
+	<windows.h>
+	"globject.h"
+
+1409894008 c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\globject.h
+	"headers.h"
+	"glslprogram.h"
+	"terrain.h"
+	"targa.h"
+
+1408115567 c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\headers.h
+	"glee/GLee.h"
+	<GL/gl.h>
+	<GL/glu.h>
+	<string>
+	<map>
+	<fstream>
+	<iostream>
+	<vector>
+
+1408820095 c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\glslprogram.h
+	"headers.h"
+
+1408820195 c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\terrain.h
+	<windows.h>
+	"headers.h"
+
+1233023227 c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\targa.h
+	<vector>
+	<string>
+	<fstream>
+
+1408820169 source:c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\glslprogram.cpp
+	"glslprogram.h"
+
+1408115593 source:c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\glwindow.cpp
+	<ctime>
+	<iostream>
+	"glWindow.h"
+	"glee/GLee.h"
+
+1408115348 c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\glwindow.h
+	<windows.h>
+	"globject.h"
+	"headers.h"
+	<GL/gl.h>
+	<ctime>
+
+1405904252 source:c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\main.cpp
+	<windows.h>
+	"glWindow.h"
+	"glxwindow.h"
+	"globject.h"
+
+1233022907 c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\glxwindow.h
+	<GL/glx.h>
+	"glx/glxext.h"
+	<X11/Xlib.h>
+	<X11/Xutil.h>
+	<X11/extensions/xf86vmode.h>
+	<X11/keysym.h>
+	<ctime>
+
+1233024244 c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\glx\glxext.h
+	<windows.h>
+	<inttypes.h>
+	<inttypes.h>
+	<inttypes.h>
+	<stdint.h>
+	<stdint.h>
+	<inttypes.h>
+
+1233023226 source:c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\targa.cpp
+	<fstream>
+	<cassert>
+	<iostream>
+	"targa.h"
+
+1408821397 source:c:\users\kaiyu\documents\codeblocks\glsl projects\texturedterrain\terrain.cpp
+	"terrain.h"
+	"globject.h"
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="TexturedTerrain" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/TexturedTerrain" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/TexturedTerrain" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="opengl32" />
+			<Add library="gdi32" />
+			<Add library="glu32" />
+		</Linker>
+		<Unit filename="data/glsl/basic.frag" />
+		<Unit filename="data/glsl/basic.vert" />
+		<Unit filename="glWindow.cpp" />
+		<Unit filename="glWindow.h" />
+		<Unit filename="glee/GLee.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="glee/GLee.h" />
+		<Unit filename="globject.cpp" />
+		<Unit filename="globject.h" />
+		<Unit filename="glslprogram.cpp" />
+		<Unit filename="glslprogram.h" />
+		<Unit filename="glx/glext.h" />
+		<Unit filename="glx/glxext.h" />
+		<Unit filename="glxwindow.h" />
+		<Unit filename="headers.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="targa.cpp" />
+		<Unit filename="targa.h" />
+		<Unit filename="terrain.cpp" />
+		<Unit filename="terrain.h" />
+		<Unit filename="wglext.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

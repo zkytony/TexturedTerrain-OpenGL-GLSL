@@ -1,0 +1,84 @@
+Configure SDL
+
+Setting up SDL in Code::Blocks
+1)First thing you need to do is download SDL headers and binaries.
+You will find them on the SDL website, specifically on this page.
+
+Scroll Down to the Development Libraries section and download the Mingw32 development library
+
+Open gz archive and there should be a *.tar archive inside.
+Open the *.tar and there should be a folder inside of that.
+Copy that folder anywhere you like. For these tutorials I'm putting it in C:\
+
+2)Start up Code:Blocks and go to the Compiler and Debugger settings.
+
+3)Go to the Compiler tab under Search Directories. Click add:
+then add in the include directory from the SDL folder you extracted.
+
+4)Then under the linker tab add in the lib directory from the SDL folder:
+5)Now take the SDL.dll from the SDL folder you extracted (it should be inside the bin subfolder) and copy it to where you're going to make your project. You're going to put SDL.dll in the same directory as your exe when you compile it.
+
+Alternatively, you can copy SDL.dll to C:\WINDOWS\SYSTEM32 so your SDL app will find SDL.dll even if it's not in the same directory. If you're using a 64bit version of Windows, you'll want to put the dll in C:\Windows\SysWOW64.
+
+The problem with this method is if you have multiple SDL apps that use different versions of SDL, you'll have version conflicts. If you have SDL 1.2.8 in SYSTEM32 when the app uses 1.2.13 you're going to run into problems. Generally you want to have your SDL.dll in the same directory as your executable developing and you'll always want to have SDL.dll in the same directory as the exe when distributing your app.
+
+6)Now start up Code::Blocks and create a new empty project.
+Then save the project where ever you want. I know Code::Blocks has an SDL project template, but I personally found it to be more combersome than doing things manually.
+
+7)Next, go to the project -> properties.
+
+8)Under the Build Targets tab, set Type to "GUI application". This is to make sure a console window does not pop up.
+
+9)Go to the Compiler and Debugger settings again and under the Linker Settings tab paste:
+-lmingw32 -lSDLmain -lSDL
+in Other Linker Options
+10)Add a new source file to the project with the following code:
+#include "SDL/SDL.h" int main( int argc, char* args[] ) { //Start SDL SDL_Init( SDL_INIT_EVERYTHING ); //Quit SDL SDL_Quit(); return 0; }
+Save the source and compile your project. If there are no errors, you're done. Otherwise go back and make sure everything is done. Double check that you have SDL.dll in the same directory as your exe or system32.
+Also, In the archive you just downloaded there's a subfolder called "docs". It contains the SDL documentation.
+
+I highly recommend that you extract them somewhere and keep it for reference.
+---------------------------------------------------
+ My build fails with multiple undefined reference errors?
+
+Example:
+
+undefined reference to `WSACleanup@8
+undefined reference to `WSACleanup@0
+
+A: Most of the time it is because the required library is not linked with your project. Go to Project->Build options...->Linker settings (tab) and add the required library or libraries.
+
+If the error includes a line number, it is likely that this is a problem with your code. Track down down your function declarations and implementations. Ensure they all match up, are spelled correctly, and have the correct scope resolution.
+
+VERY often you can get help by just googling for the name of the undefined reference, for this example its "WSACleanup". Usually one of the first links is the SDK documentation, like this from MSDN for WSACleanup. You'll find there a lot useful information, including what libraries you need to link against, as for the exsample: Requirements
+
+    Minimum supported client: Windows 2000 Professional
+    Minimum supported server: Windows 2000 Server
+    Header: Winsock2.h
+    Library: Ws2_32.lib
+    DLL: Ws2_32.dll 
+
+The header file Winsock2.h you need to include in your sources. Most likely you have done that already because otherwise you would have gotten a compiler error unable to find the function declaration. The library you need to link against, you can remove any prefix like "lib" and the file extension like ".lib", ".a" or ".so" - so just type "Ws2_32" in the linker options. Also make sure you have added the path to that library in the linker include path's options, otherwise the linker will complain that it cannot find that library you want to link against. You also know, that you should distribute Ws2_32.dll for the runtime version of you app, luckily this one usually ships with Windows anyways, so no need to do something 
+--------------------------------------------------
+Usual problems!
+
+1. SDL,
+Compiler should be initially set (Because I setup it); the compiler folder to look for is:
+
+	C:\Users\Kaiyu\Documents\OpenGL stuff\SDL\SDL-1.2.15\include
+
+The linker folder to lookup is:
+	
+	C:\Users\Kaiyu\Documents\OpenGL stuff\SDL\SDL-1.2.15\lib
+
+2. GLEW & GLUT
+The self-made libxx.a does not work because I do not have the *.o files and the created .a libraries do not have "index"
+
+Use the one provided by Web;
+
+Make sure to link them in the project
+
+3. Glu, Glut, OpenGL
+It seems to me that glu and glut are not very different, and in the book he uses glu, which is also what CodeBlocks uses. So before using that, we need to set the linker "opengl32", "glu32", "gdi32"
+
+For the concern of version, it appears to me that the default code generated by CodeBlocks is OpenGL 2.x; But OpenGL version on my computer is 4.0; As said that OpenGL automatically updates, I do not think there will be two different versions of OpenGL on the same computer, and the explanation will be that newer version has not yet deprecated all functions.

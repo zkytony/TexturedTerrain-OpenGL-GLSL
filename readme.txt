@@ -1,0 +1,1 @@
+targa is the program that loads targa files
